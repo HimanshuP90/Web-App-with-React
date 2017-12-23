@@ -36,7 +36,8 @@ class LoginForm extends React.Component {
 	render() {
 		const { data, errors } = this.state;
 		return(
-			<Form onSubmit={this.onSubmit}>
+			<div className="ui inverted segment">
+			<Form onSubmit={this.onSubmit}  className="ui inverted form">
 				<Form.Field error={!!errors.email}>
 					<label htmlFor="email">Email</label>
 					<input
@@ -61,8 +62,9 @@ class LoginForm extends React.Component {
 						/>
 						{ errors.password && <InlineError text={errors.password} />}
 				</Form.Field>
-				<Button primary>Login</Button>
+				<Button>Login</Button>
 			</Form>
+			</div>
 		);
 	}
 }
