@@ -1,13 +1,13 @@
 import express from 'express';
 import path from 'path';
-import mongoose from "mongoose";
+var mongoose = require('mongoose');
 import bodyParser from 'body-parser';
 import auth from './routes/auth';
 
 const app = express();
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/bookworn", { userMongoClient: true });
+mongoose.connect('mongodb://localhost/bookworn', { useMongoClient: true });
 
 app.use('/api/auth', auth);
 
