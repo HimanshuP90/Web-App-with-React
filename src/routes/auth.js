@@ -8,7 +8,7 @@ router.post("/", (req, res) => {
 	User.findOne({ email: credentials.email }).then(
 		user => {
 			if (user) {
-
+				res.json({success: true})
 			} else {
 				console.log("Hello", errors);
 				res.status(400).json({ errors: { global: "Invalid credentials"}});
