@@ -18,11 +18,11 @@ schema.methods.isValidPassword = function isValidPassword(password) {
 };
 
 schema.methods.generateJWT = function generateJWT() {
-	return jwt.sigin(
+	return jwt.sign(
 	{
 		email: this.email,
 	},
-		"secretkey"
+		process.env.JWT_SECRET
 	);
 }
 
