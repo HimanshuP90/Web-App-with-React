@@ -21,7 +21,24 @@ export function sendConfirmationEmail(user) {
     subject: "Welcome to Bookworm",
     text: `
     Welcome to Bookworm. Please, confirm your email.
+
     ${user.generateConfirmationUrl()}
+    `
+  };
+
+  tranport.sendMail(email);
+}
+
+export function sendResetPasswordEmail(user) {
+  const tranport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "Reset Password",
+    text: `
+    To reset password follow this link
+
+    ${user.generateResetPasswordLink()}
     `
   };
 
