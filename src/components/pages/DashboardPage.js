@@ -17,7 +17,7 @@ class DashboardPage extends React.Component {
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
 
-        {books.length === 0 ? <AddBookCtA /> : <p>You have books!</p>}
+        {(books.length) === 0 ? <AddBookCtA /> : (<p>You have books!</p>)}
       </div>
     );
   }
