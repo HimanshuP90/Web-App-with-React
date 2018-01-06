@@ -11,9 +11,12 @@
 			background-color: #EEE;
 		}
 		#container h1 {
-			font-size: 144px;
+			font-size: 72px;
 			font-family: sans-serif;
 			color: #008080A8
+		}
+		button {
+			font-size: 64px;
 		}
 	</style>
 </head>
@@ -23,8 +26,48 @@
 	</div>
 	<script type="text/babel">
 		var destination = document.querySelector("#container");
+		
+		class Buttonify extends React.Component {
+			render() {
+				return (
+					<div>
+						<button type="{this.props.behavior}">
+							{this.props.children}
+						</button>
+					</div>
+				);
+			}
+		}
+
+		class Letter extends React.Component {
+			render() {
+				var letterStyle = {
+					padding: 10,
+					margin: 10,
+					backgroundColor: this.props.bgColor,
+					textAlign: "center",
+					fontFamily: "monospace",
+					fontSize: "32px",
+					display: "inline-block"
+				};
+				return (
+					<div style={letterStyle}>
+						{this.props.children}
+					</div>
+				);
+			}
+		}
+
+
 		ReactDOM.render(
-			<h1>React First App .!!</h1>,
+			<div>
+				<Buttonify behavior="submit">SEND DATA</Buttonify>
+				<Letter bgColor="#58B3FF">A</Letter>
+				<Letter bgColor="#FF605F">E</Letter>
+				<Letter bgColor="#FFD52E">I</Letter>
+				<Letter bgColor="#49DD8E">O</Letter>
+				<Letter bgColor="#AE99FF">U</Letter>
+			</div>,
 			destination
 		);
 
