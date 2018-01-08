@@ -1,0 +1,27 @@
+[
+	{
+	"id": "1",
+	"name": "John Smith",
+	"address": "665 Edsel Road\r\nSherman Okas, CA 91403",
+	"gender": "Male",
+	"designation": "Manager",
+	"age": "40"	
+	},
+
+	{
+	"id": "2",
+	"name": "Sachin Tendulkar",
+	"address": "665 Edsel Road\r\nSherman Okas, CA 91403",
+	"gender": "Male",
+	"designation": "Crickter",
+	"age": "45"	
+	},
+	{
+	"id": "3",
+	"name": "John Smith",
+	"address": "665 Edsel Road\r\nSherman Okas, CA 91403",
+	"gender": "Male",
+	"designation": "Manager",
+	"age": "40"	
+	},
+];
