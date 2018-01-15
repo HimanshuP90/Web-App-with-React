@@ -36,7 +36,7 @@ class ConfirmationPage extends React.Component {
             <Icon name="checkmark" />
             <Message.Content>
               <Message.Header>
-                Thank you. Your account has been verified.
+                Thank you. Your account has been verified ...!!
               </Message.Header>
               <Link to="/dashboard">Go to your dashboard</Link>
             </Message.Content>
