@@ -9,6 +9,7 @@ import SignupPage from "./components/pages/SignupPage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
 import ResetPasswordPage from "./components/pages/ResetPasswordPage";
+import ExamplejQuery from "./components/pages/ExamplejQuery";
 import NewBookPage from "./components/pages/NewBookPage";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
@@ -42,6 +43,12 @@ const App = ({ location, isAuthenticated }) => (
       path="/reset_password/:token"
       exact
       component={ResetPasswordPage}
+    />
+    <GuestRoute
+      location={location}
+      path="/example_jQuery"
+      exact
+      component={ExamplejQuery}
     />
     <UserRoute
       location={location}
