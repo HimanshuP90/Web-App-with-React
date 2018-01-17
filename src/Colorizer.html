@@ -53,7 +53,8 @@
  
         this.state = {
           color: "",
-          bgColor: "white"
+          bgColor: "white",
+          _list: []
         };
  
         this.colorValue = this.colorValue.bind(this);
@@ -67,20 +68,32 @@
       }
  
       setNewColor(e) {
+        var _this = this;
         e.preventDefault();
         this.setState({
           bgColor: this.state.color
         });
- 
+      
+        var res = { "programs": [ { "name":"zonealarm", "price":"500" }, { "name":"kaspersky", "price":"200" } ] };
+
         this._input.focus();
-        this._input.value = "Coloured with" + " " + this.state.color;
+        this.setState({_div: "Coloured with" + " " + this.state.color});
+        var listArray = []
+        Object.keys(res).map(function(key, index){ 
+          for (var i = 0; i <= Object.keys(res).length; i++ ) {
+            listArray.push(res[key][i]["name"]);
+          }
+        });
+
+        _this.setState({_list: listArray});
+
       }
  
       render() {
         var squareStyle = {
           backgroundColor: this.state.bgColor
         };
- 
+        console.log(this.state._list);
         return (
           <div className="colorArea">
             <div style={squareStyle} className="colorSquare"></div>
@@ -91,6 +104,17 @@
                 placeholder="Enter a color value"></input>
               <button type="submit">go</button>
             </form>
+
+            <div>
+              {this.state._div}
+              <ul>
+                {
+                  this.state._list.map(function(key, index){
+                    return (<li key={index}><span>{key}</span></li>);
+                  })
+                }
+              </ul>
+            </div>
           </div>
         );
       }
